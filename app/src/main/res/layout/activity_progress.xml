@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/progress_header_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress - Select a Date"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/progress_year_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:hint="YYYY"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/progress_month_edittext"
+        app:layout_constraintTop_toBottomOf="@id/progress_header_textview" />
+
+    <EditText
+        android:id="@+id/progress_month_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:hint="MM"
+        android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@id/progress_year_edittext"
+        app:layout_constraintRight_toLeftOf="@id/progress_day_edittext"
+        app:layout_constraintTop_toBottomOf="@id/progress_header_textview" />
+
+    <EditText
+        android:id="@+id/progress_day_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="4"
+        android:hint="DD"
+        android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@id/progress_month_edittext"
+        app:layout_constraintRight_toLeftOf="@id/progress_date_input_button"
+        app:layout_constraintTop_toBottomOf="@id/progress_header_textview" />
+
+    <Button
+        android:id="@+id/progress_date_input_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accept"
+        app:layout_constraintLeft_toRightOf="@id/progress_day_edittext"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_header_textview" />
+
+    <TextView
+        android:id="@+id/progress_day_one_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/progress_day_two_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_year_edittext" />
+
+    <TextView
+        android:id="@+id/progress_day_two_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/progress_day_three_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_day_one_textview" />
+
+    <TextView
+        android:id="@+id/progress_day_three_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/progress_day_four_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_day_two_textview" />
+
+    <TextView
+        android:id="@+id/progress_day_four_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/progress_day_five_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_day_three_textview" />
+
+    <TextView
+        android:id="@+id/progress_day_five_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/progress_day_six_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_day_four_textview" />
+
+    <TextView
+        android:id="@+id/progress_day_six_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/progress_day_seven_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_day_five_textview" />
+
+    <TextView
+        android:id="@+id/progress_day_seven_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_day_six_textview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
