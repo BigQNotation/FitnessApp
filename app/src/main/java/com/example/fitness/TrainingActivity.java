@@ -90,39 +90,43 @@ public class TrainingActivity extends AppCompatActivity {
         findViewById(R.id.training_max_confirm_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // update max for user if its tues-fri
-                if (training_day.matches("Tue")){
-                    int new_squat = Integer.parseInt(user.squatmax) + max_offset;
-                    db.userDao().updateSquat(user.uid, Integer.toString(new_squat));
-                }
-                if (training_day.matches("Wed")){
-                    int new_ohp = Integer.parseInt(user.ohpmax) + max_offset;
-                    db.userDao().updateOHP(user.uid, Integer.toString(new_ohp));
-                }
-                if (training_day.matches("Thu")){
-                    int new_deadlift = Integer.parseInt(user.deadliftmax) + max_offset;
-                    db.userDao().updateDeadlift(user.uid, Integer.toString(new_deadlift));
-                }
-                if (training_day.matches("Fri")){
-                    int new_bench = Integer.parseInt(user.benchpressmax) + max_offset;
-                    db.userDao().updateBench(user.uid, Integer.toString(new_bench));
-                }
 
-                user = db.userDao().findByName("Bob","Jer");
-                Dates date = db.datesDao().findById(user.workingdateid);
+                if (!training_calorie_textedit.getText().toString().matches("")) {
 
-                // set stats for today's date
-                int calories = Integer.parseInt(training_calorie_textedit.getText().toString());
-                System.out.println("calories before insertion: " + calories);
-                db.datesDao().updateCalories(date.date_name, calories);
-                db.datesDao().updateBench(date.date_name, Long.parseLong(user.benchpressmax));
-                db.datesDao().updateSquat(date.date_name, Long.parseLong(user.squatmax));
-                db.datesDao().updateDeadlift(date.date_name, Long.parseLong(user.deadliftmax));
-                db.datesDao().updateOHP(date.date_name, Long.parseLong(user.ohpmax));
-                db.datesDao().updateWeightIncrease(date.date_name, max_offset);
-                training_max_offset_textview.setText("Increased by: " + max_offset + " lbs");
-                //Dates dd = db.datesDao().findByDate(date.date_name);
-                //System.out.println(dd.calories);
+
+                    // update max for user if its tues-fri
+                    if (training_day.matches("Tue")) {
+                        int new_squat = Integer.parseInt(user.squatmax) + max_offset;
+                        db.userDao().updateSquat(user.uid, Integer.toString(new_squat));
+                    }
+                    if (training_day.matches("Wed")) {
+                        int new_ohp = Integer.parseInt(user.ohpmax) + max_offset;
+                        db.userDao().updateOHP(user.uid, Integer.toString(new_ohp));
+                    }
+                    if (training_day.matches("Thu")) {
+                        int new_deadlift = Integer.parseInt(user.deadliftmax) + max_offset;
+                        db.userDao().updateDeadlift(user.uid, Integer.toString(new_deadlift));
+                    }
+                    if (training_day.matches("Fri")) {
+                        int new_bench = Integer.parseInt(user.benchpressmax) + max_offset;
+                        db.userDao().updateBench(user.uid, Integer.toString(new_bench));
+                    }
+
+                    user = db.userDao().findByName("Bob", "Jer");
+                    Dates date = db.datesDao().findById(user.workingdateid);
+
+                    // set stats for today's date
+                    int calories = Integer.parseInt(training_calorie_textedit.getText().toString());
+                    System.out.println("calories before insertion: " + calories);
+                    db.datesDao().updateCalories(date.date_name, calories);
+                    db.datesDao().updateBench(date.date_name, Long.parseLong(user.benchpressmax));
+                    db.datesDao().updateSquat(date.date_name, Long.parseLong(user.squatmax));
+                    db.datesDao().updateDeadlift(date.date_name, Long.parseLong(user.deadliftmax));
+                    db.datesDao().updateOHP(date.date_name, Long.parseLong(user.ohpmax));
+                    db.datesDao().updateWeightIncrease(date.date_name, max_offset);
+                    training_max_offset_textview.setText("Increased by: " + max_offset + " lbs");
+
+                }
             }
         });
 

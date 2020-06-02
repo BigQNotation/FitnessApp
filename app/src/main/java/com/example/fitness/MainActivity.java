@@ -82,9 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 date_my_id = db.datesDao().insert(date);
                 date = db.datesDao().findById(date_my_id);
                 // get today. time was previously off by a day but after power outage its fixed?
+                // update: nevermind it changed back so i added the day increment back again
                 // also, cut off the extra hours and minutes so we can easily retrieve days later
                 // without knowing the exact time in ms
-                long day = (calendar.getDate()) - ((calendar.getDate()+86400000)%86400000);
+                long day = (calendar.getDate() + 86400000) - ((calendar.getDate()+86400000)%86400000);
                 db.datesDao().update(date.date_id, day);
                 System.out.println("day: " + day);
                 // Set user db entry to know what the current working date id is
