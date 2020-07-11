@@ -1,12 +1,16 @@
 package com.example.fitness;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.lang.Math;
 
-public class TrainingActivity extends AppCompatActivity {
+public class TrainingActivity extends Fragment {
 
     TextView training_header_textview;
     TextView training_current_set;
@@ -38,24 +42,30 @@ public class TrainingActivity extends AppCompatActivity {
 
     User user;
     int max_offset = 0;
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.activity_training, container, false);
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
+    */
 
-        training_header_textview = findViewById(R.id.training_header_textview);
-        training_current_set = findViewById(R.id.training_current_set);
-        training_previous_button = findViewById(R.id.training_previous_button);
-        training_next_button = findViewById(R.id.training_next_button);
-        training_max_explanation_textview = findViewById(R.id.training_max_explanation_textview);
-        training_max_offset_textview = findViewById(R.id.training_max_offset_textview);
-        training_max_confirm_button = findViewById(R.id.training_max_confirm_button);
-        training_max_up_button = findViewById(R.id.training_max_up_button);
-        training_calorie_textedit = findViewById(R.id.training_calorie_textedit);
-        training_current_set_number = findViewById(R.id.training_current_set_number);
+        training_header_textview = (TextView) view.findViewById(R.id.training_header_textview);
+        training_current_set = (TextView) view.findViewById(R.id.training_current_set);
+        training_previous_button = (Button) view.findViewById(R.id.training_previous_button);
+        training_next_button = (Button) view.findViewById(R.id.training_next_button);
+        training_max_explanation_textview = (TextView) view.findViewById(R.id.training_max_explanation_textview);
+        training_max_offset_textview = (TextView) view.findViewById(R.id.training_max_offset_textview);
+        training_max_confirm_button = (Button) view.findViewById(R.id.training_max_confirm_button);
+        training_max_up_button = (Button) view.findViewById(R.id.training_max_up_button);
+        training_calorie_textedit = (EditText) view.findViewById(R.id.training_calorie_textedit);
+        training_current_set_number = (TextView) view.findViewById(R.id.training_current_set_number);
 
-        final AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+        final AppDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
 
         user = db.userDao().findByName("Bob","Jer");
@@ -69,7 +79,7 @@ public class TrainingActivity extends AppCompatActivity {
         training_header_textview.setText("Training " + training_day);
         displaySets();
 
-        findViewById(R.id.training_previous_button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.training_previous_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (current_set > 0){
@@ -79,7 +89,7 @@ public class TrainingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.training_max_up_button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.training_max_up_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 max_offset += 5;
@@ -87,7 +97,7 @@ public class TrainingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.training_max_confirm_button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.training_max_confirm_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -132,7 +142,7 @@ public class TrainingActivity extends AppCompatActivity {
 
 
 
-        findViewById(R.id.training_next_button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.training_next_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (main_exercise && current_set < 8){
@@ -164,8 +174,9 @@ public class TrainingActivity extends AppCompatActivity {
 
 
 
-
+        return view;
     }
+
     void displaySets(){
         // Display current training set for respective training day
 

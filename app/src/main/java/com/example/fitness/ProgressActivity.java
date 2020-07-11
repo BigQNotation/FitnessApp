@@ -1,14 +1,19 @@
 package com.example.fitness;
 
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,7 +25,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-public class ProgressActivity  extends AppCompatActivity {
+public class ProgressActivity  extends Fragment {
 
     EditText progress_year_edittext;
     EditText progress_month_edittext;
@@ -37,31 +42,36 @@ public class ProgressActivity  extends AppCompatActivity {
 
 
 
-
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress);
+    */
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.activity_progress, container, false);
 
-        progress_year_edittext = findViewById(R.id.progress_year_edittext);
-        progress_month_edittext = findViewById(R.id.progress_month_edittext);
-        progress_day_edittext = findViewById(R.id.progress_day_edittext);
-        progress_day_one_textview = findViewById(R.id.progress_day_one_textview);
-        progress_day_two_textview = findViewById(R.id.progress_day_two_textview);
-        progress_day_three_textview = findViewById(R.id.progress_day_three_textview);
-        progress_day_four_textview = findViewById(R.id.progress_day_four_textview);
-        progress_day_five_textview = findViewById(R.id.progress_day_five_textview);
-        progress_day_six_textview = findViewById(R.id.progress_day_six_textview);
-        progress_day_seven_textview = findViewById(R.id.progress_day_seven_textview);
+        progress_year_edittext = view.findViewById(R.id.progress_year_edittext);
+        progress_month_edittext = view.findViewById(R.id.progress_month_edittext);
+        progress_day_edittext = view.findViewById(R.id.progress_day_edittext);
+        progress_day_one_textview = view.findViewById(R.id.progress_day_one_textview);
+        progress_day_two_textview = view.findViewById(R.id.progress_day_two_textview);
+        progress_day_three_textview = view.findViewById(R.id.progress_day_three_textview);
+        progress_day_four_textview = view.findViewById(R.id.progress_day_four_textview);
+        progress_day_five_textview = view.findViewById(R.id.progress_day_five_textview);
+        progress_day_six_textview = view.findViewById(R.id.progress_day_six_textview);
+        progress_day_seven_textview = view.findViewById(R.id.progress_day_seven_textview);
 
 
 
-        final AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+        final AppDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
 
 
 
-        findViewById(R.id.progress_date_input_button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.progress_date_input_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -320,7 +330,7 @@ public class ProgressActivity  extends AppCompatActivity {
 
 
 
-
+        return view;
     }
 
 

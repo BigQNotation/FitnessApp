@@ -1,16 +1,27 @@
 package com.example.fitness;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,22 +29,49 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import androidx.appcompat.widget.Toolbar;
+
+import android.os.Bundle;
 
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    private DrawerLayout drawer;
     CalendarView calendar;
+    Button menu_button;
 
+    AppDatabase db;
+    User found_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+
+        db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
 
         calendar = findViewById(R.id.main_calendarview);
+
+        // drawer
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new HomeActivity()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
+
+
 
         // Create user. only needs to be done once
         if (db.userDao().findByName("Bob","Jer") == null){
@@ -48,31 +86,20 @@ public class MainActivity extends AppCompatActivity {
             db.userDao().insertAll(bob);
         }
 
-        final User found_user = db.userDao().findByName("Bob","Jer");
-
-    /*
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-                                            int dayOfMonth) {
-                selected_date = String.valueOf(dayOfMonth);
-                view.
-            }
-        });
-
-     */
-        findViewById(R.id.progress_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProgressActivity.class));
-            }
-        });
+        found_user = db.userDao().findByName("Bob","Jer");
 
 
-        findViewById(R.id.training_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new HomeActivity()).commit();
+                break;
+            case R.id.nav_training:
                 Context context = getApplicationContext();
 
                 // Create new date and insert it into db
@@ -90,35 +117,31 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("day: " + day);
                 // Set user db entry to know what the current working date id is
                 db.userDao().updateWDI(found_user.uid, date.date_id);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new TrainingActivity()).commit();
+                break;
+            case R.id.nav_progress:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ProgressActivity()).commit();
+                break;
+            case R.id.nav_settings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SettingsActivity()).commit();
+                break;
 
-
-                startActivity(new Intent(MainActivity.this, TrainingActivity.class));
-            }
-
-        });
-
-        findViewById(R.id.settings_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Context context = getApplicationContext();
-
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-            }
-
-        });
-
-
-    }
-/*
-    public void insertUser() {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                appDatabase.userDao().insertAll(databaseCreator.getRandomUserList());
-                return null;
-            }
-        }.execute();
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
- */
+
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }

@@ -1,60 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/training_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Training"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/settings_button" />
 
-    <Button
-        android:id="@+id/settings_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        app:layout_constraintLeft_toRightOf="@id/training_button"
-        app:layout_constraintRight_toLeftOf="@id/progress_button" />
+        <CalendarView
+            android:id="@+id/main_calendarview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
-    <Button
-        android:id="@+id/progress_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Progress"
-        app:layout_constraintLeft_toRightOf="@id/settings_button"
-        app:layout_constraintRight_toRightOf="parent" />
 
-    <CalendarView
-        android:id="@+id/main_calendarview"
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/main_menu" />
 
-    <TextView
-        android:id="@+id/main_welcome_textview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Settings: Used to modify your current maximum weight for one repetition for various exercises, which will be used to calculate your training exercises. This must be done just once before your first time exercising.\n\n\n\n\nTraining: View today's exercises. After the exercises you will be prompted to enter how well you did on the one repetition set, which will increase the weight for next week. It will also ask you how many calories you have consumed today.\n\n\n\n\nProgress: View your progress alongside if you have consumed the sufficient calories."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_explanation_textview" />
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-    <TextView
-        android:id="@+id/main_explanation_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Quinn's Fitness App.\n\n\n"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/main_welcome_textview"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/training_button" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
