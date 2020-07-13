@@ -23,6 +23,137 @@ import java.lang.Math;
 
 public class TrainingActivity extends Fragment {
 
+
+    User user;
+
+    TextView training_header_textview;
+    TextView training_main_set_1;
+    TextView training_main_set_2;
+    TextView training_main_set_3;
+    TextView training_main_set_4;
+    TextView training_main_set_5;
+    TextView training_main_set_6;
+    TextView training_main_set_7;
+    TextView training_main_set_8;
+    TextView training_main_set_9;
+
+    TextView training_secondary_set_1;
+    TextView training_secondary_set_2;
+    TextView training_secondary_set_3;
+    TextView training_secondary_set_4;
+    TextView training_secondary_set_5;
+    TextView training_secondary_set_6;
+    TextView training_secondary_set_7;
+    TextView training_secondary_set_8;
+    TextView training_secondary_set_9;
+
+    String training_day;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_training, container, false);
+
+        training_header_textview = (TextView) view.findViewById(R.id.training_header_textview);
+        training_main_set_1 = (TextView) view.findViewById(R.id.training_main_set_1);
+        training_main_set_2 = (TextView) view.findViewById(R.id.training_main_set_2);
+        training_main_set_3 = (TextView) view.findViewById(R.id.training_main_set_3);
+        training_main_set_4 = (TextView) view.findViewById(R.id.training_main_set_4);
+        training_main_set_5 = (TextView) view.findViewById(R.id.training_main_set_5);
+        training_main_set_6 = (TextView) view.findViewById(R.id.training_main_set_6);
+        training_main_set_7 = (TextView) view.findViewById(R.id.training_main_set_7);
+        training_main_set_8 = (TextView) view.findViewById(R.id.training_main_set_8);
+        training_main_set_9 = (TextView) view.findViewById(R.id.training_main_set_9);
+
+        training_secondary_set_1 = (TextView) view.findViewById(R.id.training_secondary_set_1);
+        training_secondary_set_2 = (TextView) view.findViewById(R.id.training_secondary_set_2);
+        training_secondary_set_3 = (TextView) view.findViewById(R.id.training_secondary_set_3);
+        training_secondary_set_4 = (TextView) view.findViewById(R.id.training_secondary_set_4);
+        training_secondary_set_5 = (TextView) view.findViewById(R.id.training_secondary_set_5);
+        training_secondary_set_6 = (TextView) view.findViewById(R.id.training_secondary_set_6);
+        training_secondary_set_7 = (TextView) view.findViewById(R.id.training_secondary_set_7);
+        training_secondary_set_8 = (TextView) view.findViewById(R.id.training_secondary_set_8);
+
+        final AppDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(),
+                AppDatabase.class, "database-name").allowMainThreadQueries().build();
+
+        user = db.userDao().findByName("Bob","Jer");
+        Dates date = db.datesDao().findById(user.workingdateid);
+
+        // Get the current training day name
+        DateFormat simple = new SimpleDateFormat("E");
+        Date result = new Date(date.date_name);
+        training_day = simple.format(result);
+
+        training_header_textview.setText("Training " + training_day);
+        displaySets();
+
+
+        return view;
+    }
+
+
+    void displaySets(){
+
+        // Sunday
+        if ( training_day.matches("Mon")) {
+
+            // Get maxes for this day, calculate working weights
+            int bench_max = Integer.parseInt(user.benchpressmax);
+            double working_bench = (0.85 * bench_max);
+            int ohp_max = Integer.parseInt(user.ohpmax);
+            double working_ohp = (0.85 * ohp_max);
+
+            // Calculate sets weights
+            double weight_main_set_1 = (5 * (Math.ceil(Math.abs((working_bench * 0.65 - 45) / 5)))) / 2;
+            double weight_main_set_2 = (5 * (Math.ceil(Math.abs((working_bench * 0.75 - 45) / 5)))) / 2;
+            double weight_main_set_3 = (5*  (Math.ceil(Math.abs((working_bench * 0.85 - 45) / 5)))) / 2;
+            double weight_main_set_4 = (5 * (Math.ceil(Math.abs((working_bench * 0.85 - 45) / 5)))) / 2;
+            double weight_main_set_5 = (5 * (Math.ceil(Math.abs((working_bench * 0.85 - 45) / 5)))) / 2;
+            double weight_main_set_6 = (5 * (Math.ceil(Math.abs((working_bench * 0.80 - 45) / 5)))) / 2;
+            double weight_main_set_7 = (5 * (Math.ceil(Math.abs((working_bench * 0.75 - 45) / 5)))) / 2;
+            double weight_main_set_8 = (5 * (Math.ceil(Math.abs((working_bench * 0.70 - 45) / 5)))) / 2;
+            double weight_main_set_9 = (5 * (Math.ceil(Math.abs((working_bench * 0.65 - 45) / 5)))) / 2;
+
+            double weight_secondary_set_1 = (5 * (Math.ceil(Math.abs((working_ohp*0.50 - 45)/5)))) / 2;
+            double weight_secondary_set_2 = (5 * (Math.ceil(Math.abs((working_ohp*0.60 - 45)/5)))) / 2;
+            double weight_secondary_set_3 = (5 * (Math.ceil(Math.abs((working_ohp*0.70 - 45)/5)))) / 2;
+            double weight_secondary_set_4 = (5 * (Math.ceil(Math.abs((working_ohp*0.70 - 45)/5)))) / 2;
+            double weight_secondary_set_5 = (5 * (Math.ceil(Math.abs((working_ohp*0.70 - 45)/5)))) / 2;
+            double weight_secondary_set_6 = (5 * (Math.ceil(Math.abs((working_ohp*0.70 - 45)/5)))) / 2;
+            double weight_secondary_set_7 = (5 * (Math.ceil(Math.abs((working_ohp*0.70 - 45)/5)))) / 2;
+            double weight_secondary_set_8 = (5 * (Math.ceil(Math.abs((working_ohp*0.70 - 45)/5)))) / 2;
+
+            // Display sets weights
+            training_main_set_1.setText("Bench press " + Double.toString(weight_main_set_1) + " per side for 8");
+            training_main_set_2.setText("Bench press " + Double.toString(weight_main_set_2) + " per side for 6");
+            training_main_set_3.setText("Bench press " + Double.toString(weight_main_set_3) + " per side for 4");
+            training_main_set_4.setText("Bench press " + Double.toString(weight_main_set_4) + " per side for 4");
+            training_main_set_5.setText("Bench press " + Double.toString(weight_main_set_5) + " per side for 4");
+            training_main_set_6.setText("Bench press " + Double.toString(weight_main_set_6) + " per side for 5");
+            training_main_set_7.setText("Bench press " + Double.toString(weight_main_set_7) + " per side for 6");
+            training_main_set_8.setText("Bench press " + Double.toString(weight_main_set_8) + " per side for 7");
+            training_main_set_9.setText("Bench press " + Double.toString(weight_main_set_9) + " per side for 8+");
+
+            training_secondary_set_1.setText("OHP " + Double.toString(weight_secondary_set_1) + " per side for 6");
+            training_secondary_set_2.setText("OHP " + Double.toString(weight_secondary_set_2) + " per side for 5");
+            training_secondary_set_3.setText("OHP " + Double.toString(weight_secondary_set_3) + " per side for 3");
+            training_secondary_set_4.setText("OHP " + Double.toString(weight_secondary_set_4) + " per side for 5");
+            training_secondary_set_5.setText("OHP " + Double.toString(weight_secondary_set_5) + " per side for 7");
+            training_secondary_set_6.setText("OHP " + Double.toString(weight_secondary_set_6) + " per side for 4");
+            training_secondary_set_7.setText("OHP " + Double.toString(weight_secondary_set_7) + " per side for 6");
+            training_secondary_set_8.setText("OHP " + Double.toString(weight_secondary_set_8) + " per side for 8");
+
+
+
+        }
+
+    }
+
+
+}
+    /*
+
     TextView training_header_textview;
     TextView training_current_set;
     TextView training_current_set_number;
@@ -47,12 +178,7 @@ public class TrainingActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.activity_training, container, false);
 
-    /*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_training);
-    */
+
 
         training_header_textview = (TextView) view.findViewById(R.id.training_header_textview);
         training_current_set = (TextView) view.findViewById(R.id.training_current_set);
@@ -956,3 +1082,4 @@ public class TrainingActivity extends Fragment {
         }
     }
 }
+*/

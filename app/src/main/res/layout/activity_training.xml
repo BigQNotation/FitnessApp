@@ -36,78 +36,206 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="27dp" />
 
-    <TextView
-        android:id="@+id/training_current_set_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/training_current_set"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/training_current_set"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoText="false"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/training_calorie_textedit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/training_previous_button" />
-
-    <Button
-        android:id="@+id/training_max_up_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="increase"
-        android:visibility="gone"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/training_header_textview">
 
-    <Button
-        android:id="@+id/training_max_confirm_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Accept"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/training_max_offset_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Increase by: 0 lbs"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/training_max_up_button"
-        app:layout_constraintRight_toLeftOf="@id/training_max_confirm_button"
-        app:layout_constraintTop_toBottomOf="@id/training_max_explanation_textview" />
+            <TextView
+                android:id="@+id/training_main_set_1"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toTopOf="parent"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
 
-    <TextView
-        android:id="@+id/training_max_explanation_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Increase the weight for next week?"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/training_max_confirm_button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+            <TextView
+                android:id="@+id/training_main_set_2"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_1"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
 
-    <EditText
-        android:id="@+id/training_calorie_textedit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter calorie total for today"
-        android:textSize="18sp"
-        android:visibility="gone"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@id/training_max_explanation_textview"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+            <TextView
+                android:id="@+id/training_main_set_3"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_2"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_main_set_4"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_3"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_main_set_5"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_4"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_main_set_6"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_5"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_main_set_7"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_6"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_main_set_8"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_7"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_main_set_9"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_8"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_1"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_main_set_9"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_2"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_1"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_3"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_2"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_4"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_3"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_5"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_4"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_6"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_5"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_7"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_6"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+            <TextView
+                android:id="@+id/training_secondary_set_8"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_7"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="2sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
