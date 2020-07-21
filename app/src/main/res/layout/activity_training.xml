@@ -7,34 +7,15 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/training_previous_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Previous"
-        tools:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="27dp" />
-
     <TextView
         android:id="@+id/training_header_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Training"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/training_previous_button"
-        app:layout_constraintEnd_toStartOf="@id/training_next_button"
-        app:layout_constraintStart_toEndOf="@id/training_previous_button"
-        app:layout_constraintTop_toTopOf="@id/training_previous_button" />
-
-    <Button
-        android:id="@+id/training_next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="39dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,101 +30,119 @@
 
             <TextView
                 android:id="@+id/training_main_set_1"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
-                android:text="TextView"
-                app:layout_constraintTop_toTopOf="parent"
-                android:autoSizeTextType="uniform"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
-                android:autoSizeStepGranularity="2sp" />
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:text="TextView"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_1" />
 
             <TextView
                 android:id="@+id/training_main_set_2"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
-                android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_1"
-                android:autoSizeTextType="uniform"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
-                android:autoSizeStepGranularity="2sp" />
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:text="TextView"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_2" />
 
             <TextView
                 android:id="@+id/training_main_set_3"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_2"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_3"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
                 android:id="@+id/training_main_set_4"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_3"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_4"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
                 android:id="@+id/training_main_set_5"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_4"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_5"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_5"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
                 android:id="@+id/training_main_set_6"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_5"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_6"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
                 android:id="@+id/training_main_set_7"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_6"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_7"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_7"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
                 android:id="@+id/training_main_set_8"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_7"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_8"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_8"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
                 android:id="@+id/training_main_set_9"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:autoSizeMaxTextSize="50sp"
                 android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_main_set_8"
+                app:layout_constraintLeft_toRightOf="@id/training_checklist_main_9"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/training_checklist_main_9"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="20sp"
                 android:autoSizeStepGranularity="2sp" />
 
             <TextView
@@ -227,12 +226,113 @@
                 android:id="@+id/training_secondary_set_8"
                 android:layout_width="match_parent"
                 android:layout_height="30sp"
-                android:text="TextView"
-                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_7"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="12sp"
                 android:autoSizeMaxTextSize="20sp"
-                android:autoSizeStepGranularity="2sp" />
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:autoText="true"
+                android:background="#FFFFFF"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@id/training_secondary_set_7" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_1" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_2" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_3" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_4" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_5" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_6" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_7" />
+
+            <ImageButton
+                android:id="@+id/training_checklist_main_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@null"
+                android:src="@drawable/training_incomplete_icon"
+                app:layout_constraintRight_toLeftOf="@id/training_main_set_9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/training_checklist_main_8" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,16 @@ public class TrainingActivity extends Fragment {
     TextView training_secondary_set_8;
     TextView training_secondary_set_9;
 
+    ImageButton training_checklist_main_1;
+    ImageButton training_checklist_main_2;
+    ImageButton training_checklist_main_3;
+    ImageButton training_checklist_main_4;
+    ImageButton training_checklist_main_5;
+    ImageButton training_checklist_main_6;
+    ImageButton training_checklist_main_7;
+    ImageButton training_checklist_main_8;
+    ImageButton training_checklist_main_9;
+
     String training_day;
 
     @Nullable
@@ -73,6 +84,92 @@ public class TrainingActivity extends Fragment {
         training_secondary_set_6 = (TextView) view.findViewById(R.id.training_secondary_set_6);
         training_secondary_set_7 = (TextView) view.findViewById(R.id.training_secondary_set_7);
         training_secondary_set_8 = (TextView) view.findViewById(R.id.training_secondary_set_8);
+
+
+        training_checklist_main_1 = (ImageButton) view.findViewById(R.id.training_checklist_main_1);
+        training_checklist_main_2 = (ImageButton) view.findViewById(R.id.training_checklist_main_2);
+        training_checklist_main_3 = (ImageButton) view.findViewById(R.id.training_checklist_main_3);
+        training_checklist_main_4 = (ImageButton) view.findViewById(R.id.training_checklist_main_4);
+        training_checklist_main_5 = (ImageButton) view.findViewById(R.id.training_checklist_main_5);
+        training_checklist_main_6 = (ImageButton) view.findViewById(R.id.training_checklist_main_6);
+        training_checklist_main_7 = (ImageButton) view.findViewById(R.id.training_checklist_main_7);
+        training_checklist_main_8 = (ImageButton) view.findViewById(R.id.training_checklist_main_8);
+        training_checklist_main_9 = (ImageButton) view.findViewById(R.id.training_checklist_main_9);
+
+
+        // Handle check mark buttons being held down, change image
+        training_checklist_main_1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_1.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_2.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_3.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_4.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_5.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_6.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_6.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_7.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_7.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_8.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_8.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
+        training_checklist_main_9.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v){
+                training_checklist_main_9.setImageResource(R.drawable.training_complete_icon);
+                return true;
+            }
+        });
+
 
         final AppDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
