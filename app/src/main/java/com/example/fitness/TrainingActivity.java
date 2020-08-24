@@ -281,9 +281,9 @@ public class TrainingActivity extends Fragment {
 
             // Get maxes for this day, calculate working weights
             int bench_max = Integer.parseInt(user.benchpressmax);
-            double working_bench = (0.85 * bench_max);
+            double working_bench = (0.9 * bench_max);
             int ohp_max = Integer.parseInt(user.ohpmax);
-            double working_ohp = (0.85 * ohp_max);
+            double working_ohp = (0.9 * ohp_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5 * (Math.ceil(Math.abs((working_bench * 0.65 - 45) / 5)))) / 2;
@@ -333,9 +333,9 @@ public class TrainingActivity extends Fragment {
 
             // Get maxes for this day, calculate working weights
             int bench_max = Integer.parseInt(user.benchpressmax);
-            double working_bench = (0.85 * bench_max);
+            double working_bench = (0.9 * bench_max);
             int ohp_max = Integer.parseInt(user.ohpmax);
-            double working_ohp = (0.85 * ohp_max);
+            double working_ohp = (0.9 * ohp_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5 * (Math.ceil(Math.abs((working_bench * 0.65 - 45) / 5)))) / 2;
@@ -383,9 +383,9 @@ public class TrainingActivity extends Fragment {
         if (training_day.matches("Tue")) {
 
             int squat_max = Integer.parseInt(user.squatmax);
-            double working_squat = (0.85 * squat_max);
+            double working_squat = (0.9 * squat_max);
             int sumo_max = Integer.parseInt(user.deadliftmax);
-            double working_sumo = (0.85 * sumo_max);
+            double working_sumo = (0.9 * sumo_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5 * (Math.ceil(Math.abs((working_squat * 0.65 - 45) / 5)))) / 2;
@@ -431,10 +431,10 @@ public class TrainingActivity extends Fragment {
         if (training_day.matches("Wed")) {
 
             int ohp_max = Integer.parseInt(user.ohpmax);
-            double working_ohp = (0.85*ohp_max);
+            double working_ohp = (0.9*ohp_max);
 
             int bench_max = Integer.parseInt(user.benchpressmax);
-            double working_bench = (0.85*bench_max);
+            double working_bench = (0.9*bench_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_ohp*0.65 - 45)/5)))) / 2;
@@ -481,9 +481,9 @@ public class TrainingActivity extends Fragment {
 
 
             int deadlift_max = Integer.parseInt(user.deadliftmax);
-            double working_deadlift = (0.85*deadlift_max);
+            double working_deadlift = (0.9*deadlift_max);
             int squat_max = Integer.parseInt(user.squatmax);
-            double working_squat = (0.85*squat_max);
+            double working_squat = (0.9*squat_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_deadlift*0.65 - 45)/5)))) / 2;
@@ -530,8 +530,8 @@ public class TrainingActivity extends Fragment {
         if (training_day.matches("Fri")) {
 
             int bench_max = Integer.parseInt(user.benchpressmax);
-            double working_bench = (0.85*bench_max);
-            double working_cgb = (0.85*bench_max);
+            double working_bench = (0.9*bench_max);
+            double working_cgb = (0.9*bench_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_bench*0.65 - 45)/5)))) / 2;
@@ -580,9 +580,9 @@ public class TrainingActivity extends Fragment {
 
 
             int squat_max = Integer.parseInt(user.squatmax);
-            double working_squat = (0.85*squat_max);
+            double working_squat = (0.9*squat_max);
             int sumo_max = Integer.parseInt(user.deadliftmax);
-            double working_sumo = (0.85*sumo_max);
+            double working_sumo = (0.9*sumo_max);
 
             // Calculate sets weights
             double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_squat*0.65 - 45)/5)))) / 2;

@@ -52,25 +52,29 @@
         android:id="@+id/deadlift_max_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Deadlift" />
+        android:hint="Deadlift"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/benchpress_max_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Bench Press" />
+        android:hint="Bench Press"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/squat_max_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Squat" />
+        android:hint="Squat"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/ohp_max_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Overhead Press" />
+        android:hint="Overhead Press"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/settings_max_confirmation_button"
