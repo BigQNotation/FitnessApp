@@ -388,10 +388,10 @@ public class TrainingActivity extends Fragment {
             double working_sumo = (0.9 * sumo_max);
 
             // Calculate sets weights
-            double weight_main_set_1 = (5 * (Math.ceil(Math.abs((working_squat * 0.65 - 45) / 5)))) / 2;
-            double weight_main_set_2 = (5 * (Math.ceil(Math.abs((working_squat * 0.75 - 45) / 5)))) / 2;
-            double weight_main_set_3 = (5 * (Math.ceil(Math.abs((working_squat * 0.85 - 45) / 5)))) / 2;
-            double weight_main_set_4 = (5 * (Math.ceil(Math.abs((working_squat * 0.85 - 45) / 5)))) / 2;
+            double weight_main_set_1 = (5 * (Math.ceil(Math.abs((working_squat * 0.75 - 45) / 5)))) / 2;
+            double weight_main_set_2 = (5 * (Math.ceil(Math.abs((working_squat * 0.85 - 45) / 5)))) / 2;
+            double weight_main_set_3 = (5 * (Math.ceil(Math.abs((working_squat * 0.95 - 45) / 5)))) / 2;
+            double weight_main_set_4 = (5 * (Math.ceil(Math.abs((working_squat * 0.9 - 45) / 5)))) / 2;
             double weight_main_set_5 = (5 * (Math.ceil(Math.abs((working_squat * 0.85 - 45) / 5)))) / 2;
             double weight_main_set_6 = (5 * (Math.ceil(Math.abs((working_squat * 0.80 - 45) / 5)))) / 2;
             double weight_main_set_7 = (5 * (Math.ceil(Math.abs((working_squat * 0.75 - 45) / 5)))) / 2;
@@ -408,17 +408,17 @@ public class TrainingActivity extends Fragment {
             double weight_secondary_set_8 = (5 * (Math.ceil(Math.abs((working_sumo * 0.7 - 45) / 5)))) / 2;
 
             // Display sets weights
-            training_main_set_1.setText("Squat " + Double.toString(weight_main_set_1) + " per side for 8");
-            training_main_set_2.setText("Squat " + Double.toString(weight_main_set_2) + " per side for 6");
-            training_main_set_3.setText("Squat " + Double.toString(weight_main_set_3) + " per side for 4");
-            training_main_set_4.setText("Squat " + Double.toString(weight_main_set_4) + " per side for 4");
-            training_main_set_5.setText("Squat " + Double.toString(weight_main_set_5) + " per side for 4");
-            training_main_set_6.setText("Squat " + Double.toString(weight_main_set_6) + " per side for 5");
-            training_main_set_7.setText("Squat " + Double.toString(weight_main_set_7) + " per side for 6");
-            training_main_set_8.setText("Squat " + Double.toString(weight_main_set_8) + " per side for 7");
-            training_main_set_9.setText("Squat " + Double.toString(weight_main_set_9) + " per side for 8+");
+            training_main_set_1.setText("Squat " + Double.toString(weight_main_set_1) + " per side for 5");
+            training_main_set_2.setText("Squat " + Double.toString(weight_main_set_2) + " per side for 3");
+            training_main_set_3.setText("Squat " + Double.toString(weight_main_set_3) + " per side for 1+");
+            training_main_set_4.setText("Squat " + Double.toString(weight_main_set_4) + " per side for 3");
+            training_main_set_5.setText("Squat " + Double.toString(weight_main_set_5) + " per side for 3");
+            training_main_set_6.setText("Squat " + Double.toString(weight_main_set_6) + " per side for 3");
+            training_main_set_7.setText("Squat " + Double.toString(weight_main_set_7) + " per side for 5");
+            training_main_set_8.setText("Squat " + Double.toString(weight_main_set_8) + " per side for 5");
+            training_main_set_9.setText("Squat " + Double.toString(weight_main_set_9) + " per side for 5+");
 
-            training_secondary_set_1.setText("Sumo deadlift " + Double.toString(weight_secondary_set_1) + " per side for 6");
+            training_secondary_set_1.setText("Sumo deadlift " + Double.toString(weight_secondary_set_1) + " per side for 5");
             training_secondary_set_2.setText("Sumo deadlift " + Double.toString(weight_secondary_set_2) + " per side for 5");
             training_secondary_set_3.setText("Sumo deadlift " + Double.toString(weight_secondary_set_3) + " per side for 3");
             training_secondary_set_4.setText("Sumo deadlift " + Double.toString(weight_secondary_set_4) + " per side for 5");
@@ -437,35 +437,35 @@ public class TrainingActivity extends Fragment {
             double working_bench = (0.9*bench_max);
 
             // Calculate sets weights
-            double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_ohp*0.65 - 45)/5)))) / 2;
-            double weight_main_set_2 = (5*(Math.ceil(Math.abs((working_ohp*0.75 - 45)/5)))) / 2;
-            double weight_main_set_3 = (5*(Math.ceil(Math.abs((working_ohp*0.85 - 45)/5)))) / 2;
-            double weight_main_set_4 = (5*(Math.ceil(Math.abs((working_ohp*0.85 - 45)/5)))) / 2;
+            double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_ohp*0.75 - 45)/5)))) / 2;
+            double weight_main_set_2 = (5*(Math.ceil(Math.abs((working_ohp*0.85 - 45)/5)))) / 2;
+            double weight_main_set_3 = (5*(Math.ceil(Math.abs((working_ohp*0.95 - 45)/5)))) / 2;
+            double weight_main_set_4 = (5*(Math.ceil(Math.abs((working_ohp*0.9 - 45)/5)))) / 2;
             double weight_main_set_5 = (5*(Math.ceil(Math.abs((working_ohp*0.85 - 45)/5)))) / 2;
             double weight_main_set_6 = (5*(Math.ceil(Math.abs((working_ohp*0.8 - 45)/5)))) / 2;
             double weight_main_set_7 = (5*(Math.ceil(Math.abs((working_ohp*0.75 - 45)/5)))) / 2;
             double weight_main_set_8 = (5*(Math.ceil(Math.abs((working_ohp*0.7 - 45)/5)))) / 2;
             double weight_main_set_9 = (5*(Math.ceil(Math.abs((working_ohp*0.65 - 45)/5)))) / 2;
 
-            double weight_secondary_set_1 = (5*(Math.ceil(Math.abs((working_bench*0.5 - 45)/5)))) / 2;
-            double weight_secondary_set_2 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
-            double weight_secondary_set_3 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_4 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_5 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_6 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_7 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_8 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
+            double weight_secondary_set_1 = (5*(Math.ceil(Math.abs((working_bench*0.4 - 45)/5)))) / 2;
+            double weight_secondary_set_2 = (5*(Math.ceil(Math.abs((working_bench*0.5 - 45)/5)))) / 2;
+            double weight_secondary_set_3 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_4 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_5 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_6 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_7 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_8 = (5*(Math.ceil(Math.abs((working_bench*0.6 - 45)/5)))) / 2;
 
             // Display sets weights
-            training_main_set_1.setText("Overhead Press " + Double.toString(weight_main_set_1) + " per side for 8");
-            training_main_set_2.setText("Overhead Press " + Double.toString(weight_main_set_2) + " per side for 6");
-            training_main_set_3.setText("Overhead Press " + Double.toString(weight_main_set_3) + " per side for 4");
-            training_main_set_4.setText("Overhead Press " + Double.toString(weight_main_set_4) + " per side for 4");
-            training_main_set_5.setText("Overhead Press " + Double.toString(weight_main_set_5) + " per side for 4");
-            training_main_set_6.setText("Overhead Press " + Double.toString(weight_main_set_6) + " per side for 5");
-            training_main_set_7.setText("Overhead Press " + Double.toString(weight_main_set_7) + " per side for 6");
-            training_main_set_8.setText("Overhead Press " + Double.toString(weight_main_set_8) + " per side for 7");
-            training_main_set_9.setText("Overhead Press " + Double.toString(weight_main_set_9) + " per side for 8+");
+            training_main_set_1.setText("Overhead Press " + Double.toString(weight_main_set_1) + " per side for 5");
+            training_main_set_2.setText("Overhead Press " + Double.toString(weight_main_set_2) + " per side for 3");
+            training_main_set_3.setText("Overhead Press " + Double.toString(weight_main_set_3) + " per side for 1+");
+            training_main_set_4.setText("Overhead Press " + Double.toString(weight_main_set_4) + " per side for 3");
+            training_main_set_5.setText("Overhead Press " + Double.toString(weight_main_set_5) + " per side for 3");
+            training_main_set_6.setText("Overhead Press " + Double.toString(weight_main_set_6) + " per side for 3");
+            training_main_set_7.setText("Overhead Press " + Double.toString(weight_main_set_7) + " per side for 5");
+            training_main_set_8.setText("Overhead Press " + Double.toString(weight_main_set_8) + " per side for 5");
+            training_main_set_9.setText("Overhead Press " + Double.toString(weight_main_set_9) + " per side for 5+");
 
             training_secondary_set_1.setText("Incline Bench " + Double.toString(weight_secondary_set_1) + " per side for 6");
             training_secondary_set_2.setText("Incline Bench " + Double.toString(weight_secondary_set_2) + " per side for 5");
@@ -486,37 +486,37 @@ public class TrainingActivity extends Fragment {
             double working_squat = (0.9*squat_max);
 
             // Calculate sets weights
-            double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_deadlift*0.65 - 45)/5)))) / 2;
-            double weight_main_set_2 = (5*(Math.ceil(Math.abs((working_deadlift*0.75 - 45)/5)))) / 2;
-            double weight_main_set_3 = (5*(Math.ceil(Math.abs((working_deadlift*0.85 - 45)/5)))) / 2;
-            double weight_main_set_4 = (5*(Math.ceil(Math.abs((working_deadlift*0.85 - 45)/5)))) / 2;
+            double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_deadlift*0.75 - 45)/5)))) / 2;
+            double weight_main_set_2 = (5*(Math.ceil(Math.abs((working_deadlift*0.85 - 45)/5)))) / 2;
+            double weight_main_set_3 = (5*(Math.ceil(Math.abs((working_deadlift*0.95 - 45)/5)))) / 2;
+            double weight_main_set_4 = (5*(Math.ceil(Math.abs((working_deadlift*0.90 - 45)/5)))) / 2;
             double weight_main_set_5 = (5*(Math.ceil(Math.abs((working_deadlift*0.85 - 45)/5)))) / 2;
             double weight_main_set_6 = (5*(Math.ceil(Math.abs((working_deadlift*0.80 - 45)/5)))) / 2;
             double weight_main_set_7 = (5*(Math.ceil(Math.abs((working_deadlift*0.75 - 45)/5)))) / 2;
             double weight_main_set_8 = (5*(Math.ceil(Math.abs((working_deadlift*0.70 - 45)/5)))) / 2;
             double weight_main_set_9 = (5*(Math.ceil(Math.abs((working_deadlift*0.65 - 45)/5)))) / 2;
 
-            double weight_secondary_set_1 = (5*(Math.ceil(Math.abs((working_squat*0.5 - 45)/5)))) / 2;
-            double weight_secondary_set_2 = (5*(Math.ceil(Math.abs((working_squat*0.6 - 45)/5)))) / 2;
-            double weight_secondary_set_3 = (5*(Math.ceil(Math.abs((working_squat*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_4 = (5*(Math.ceil(Math.abs((working_squat*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_5 = (5*(Math.ceil(Math.abs((working_squat*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_6 = (5*(Math.ceil(Math.abs((working_squat*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_7 = (5*(Math.ceil(Math.abs((working_squat*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_8 = (5*(Math.ceil(Math.abs((working_squat*0.7 - 45)/5)))) / 2;
+            double weight_secondary_set_1 = (5*(Math.ceil(Math.abs((working_squat*0.35 - 45)/5)))) / 2;
+            double weight_secondary_set_2 = (5*(Math.ceil(Math.abs((working_squat*0.45 - 45)/5)))) / 2;
+            double weight_secondary_set_3 = (5*(Math.ceil(Math.abs((working_squat*0.55 - 45)/5)))) / 2;
+            double weight_secondary_set_4 = (5*(Math.ceil(Math.abs((working_squat*0.55 - 45)/5)))) / 2;
+            double weight_secondary_set_5 = (5*(Math.ceil(Math.abs((working_squat*0.55 - 45)/5)))) / 2;
+            double weight_secondary_set_6 = (5*(Math.ceil(Math.abs((working_squat*0.55 - 45)/5)))) / 2;
+            double weight_secondary_set_7 = (5*(Math.ceil(Math.abs((working_squat*0.55 - 45)/5)))) / 2;
+            double weight_secondary_set_8 = (5*(Math.ceil(Math.abs((working_squat*0.55 - 45)/5)))) / 2;
 
             // Display sets weights
-            training_main_set_1.setText("Deadlift " + Double.toString(weight_main_set_1) + " per side for 8");
-            training_main_set_2.setText("Deadlift " + Double.toString(weight_main_set_2) + " per side for 6");
-            training_main_set_3.setText("Deadlift " + Double.toString(weight_main_set_3) + " per side for 4");
-            training_main_set_4.setText("Deadlift " + Double.toString(weight_main_set_4) + " per side for 4");
-            training_main_set_5.setText("Deadlift " + Double.toString(weight_main_set_5) + " per side for 4");
-            training_main_set_6.setText("Deadlift " + Double.toString(weight_main_set_6) + " per side for 5");
-            training_main_set_7.setText("Deadlift " + Double.toString(weight_main_set_7) + " per side for 6");
-            training_main_set_8.setText("Deadlift " + Double.toString(weight_main_set_8) + " per side for 7");
-            training_main_set_9.setText("Deadlift " + Double.toString(weight_main_set_9) + " per side for 8+");
+            training_main_set_1.setText("Deadlift " + Double.toString(weight_main_set_1) + " per side for 5");
+            training_main_set_2.setText("Deadlift " + Double.toString(weight_main_set_2) + " per side for 3");
+            training_main_set_3.setText("Deadlift " + Double.toString(weight_main_set_3) + " per side for 1+");
+            training_main_set_4.setText("Deadlift " + Double.toString(weight_main_set_4) + " per side for 3");
+            training_main_set_5.setText("Deadlift " + Double.toString(weight_main_set_5) + " per side for 3");
+            training_main_set_6.setText("Deadlift " + Double.toString(weight_main_set_6) + " per side for 3");
+            training_main_set_7.setText("Deadlift " + Double.toString(weight_main_set_7) + " per side for 3");
+            training_main_set_8.setText("Deadlift " + Double.toString(weight_main_set_8) + " per side for 3");
+            training_main_set_9.setText("Deadlift " + Double.toString(weight_main_set_9) + " per side for 3+");
 
-            training_secondary_set_1.setText("Front Squat " + Double.toString(weight_secondary_set_1) + " per side for 6");
+            training_secondary_set_1.setText("Front Squat " + Double.toString(weight_secondary_set_1) + " per side for 5");
             training_secondary_set_2.setText("Front Squat " + Double.toString(weight_secondary_set_2) + " per side for 5");
             training_secondary_set_3.setText("Front Squat " + Double.toString(weight_secondary_set_3) + " per side for 3");
             training_secondary_set_4.setText("Front Squat " + Double.toString(weight_secondary_set_4) + " per side for 5");
@@ -534,35 +534,35 @@ public class TrainingActivity extends Fragment {
             double working_cgb = (0.9*bench_max);
 
             // Calculate sets weights
-            double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_bench*0.65 - 45)/5)))) / 2;
-            double weight_main_set_2 = (5*(Math.ceil(Math.abs((working_bench*0.75 - 45)/5)))) / 2;
-            double weight_main_set_3 = (5*(Math.ceil(Math.abs((working_bench*0.85 - 45)/5)))) / 2;
-            double weight_main_set_4 = (5*(Math.ceil(Math.abs((working_bench*0.85 - 45)/5)))) / 2;
+            double weight_main_set_1 = (5*(Math.ceil(Math.abs((working_bench*0.75 - 45)/5)))) / 2;
+            double weight_main_set_2 = (5*(Math.ceil(Math.abs((working_bench*0.85 - 45)/5)))) / 2;
+            double weight_main_set_3 = (5*(Math.ceil(Math.abs((working_bench*0.95 - 45)/5)))) / 2;
+            double weight_main_set_4 = (5*(Math.ceil(Math.abs((working_bench*0.90 - 45)/5)))) / 2;
             double weight_main_set_5 = (5*(Math.ceil(Math.abs((working_bench*0.85 - 45)/5)))) / 2;
-            double weight_main_set_6 = (5*(Math.ceil(Math.abs((working_bench*0.8 - 45)/5)))) / 2;
+            double weight_main_set_6 = (5*(Math.ceil(Math.abs((working_bench*0.80 - 45)/5)))) / 2;
             double weight_main_set_7 = (5*(Math.ceil(Math.abs((working_bench*0.75 - 45)/5)))) / 2;
-            double weight_main_set_8 = (5*(Math.ceil(Math.abs((working_bench*0.7 - 45)/5)))) / 2;
+            double weight_main_set_8 = (5*(Math.ceil(Math.abs((working_bench*0.70 - 45)/5)))) / 2;
             double weight_main_set_9 = (5*(Math.ceil(Math.abs((working_bench*0.65 - 45)/5)))) / 2;
 
-            double weight_secondary_set_1 = (5*(Math.ceil(Math.abs((working_cgb*0.5 - 45)/5)))) / 2;
-            double weight_secondary_set_2 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
-            double weight_secondary_set_3 = (5*(Math.ceil(Math.abs((working_cgb*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_4 = (5*(Math.ceil(Math.abs((working_cgb*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_5 = (5*(Math.ceil(Math.abs((working_cgb*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_6 = (5*(Math.ceil(Math.abs((working_cgb*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_7 = (5*(Math.ceil(Math.abs((working_cgb*0.7 - 45)/5)))) / 2;
-            double weight_secondary_set_8 = (5*(Math.ceil(Math.abs((working_cgb*0.7 - 45)/5)))) / 2;
+            double weight_secondary_set_1 = (5*(Math.ceil(Math.abs((working_cgb*0.4 - 45)/5)))) / 2;
+            double weight_secondary_set_2 = (5*(Math.ceil(Math.abs((working_cgb*0.5 - 45)/5)))) / 2;
+            double weight_secondary_set_3 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_4 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_5 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_6 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_7 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
+            double weight_secondary_set_8 = (5*(Math.ceil(Math.abs((working_cgb*0.6 - 45)/5)))) / 2;
 
             // Display sets weights
-            training_main_set_1.setText("Bench Press " + Double.toString(weight_main_set_1) + " per side for 8");
-            training_main_set_2.setText("Bench Press " + Double.toString(weight_main_set_2) + " per side for 6");
-            training_main_set_3.setText("Bench Press " + Double.toString(weight_main_set_3) + " per side for 4");
-            training_main_set_4.setText("Bench Press " + Double.toString(weight_main_set_4) + " per side for 4");
-            training_main_set_5.setText("Bench Press " + Double.toString(weight_main_set_5) + " per side for 4");
-            training_main_set_6.setText("Bench Press " + Double.toString(weight_main_set_6) + " per side for 5");
-            training_main_set_7.setText("Bench Press " + Double.toString(weight_main_set_7) + " per side for 6");
-            training_main_set_8.setText("Bench Press " + Double.toString(weight_main_set_8) + " per side for 7");
-            training_main_set_9.setText("Bench Press " + Double.toString(weight_main_set_9) + " per side for 8+");
+            training_main_set_1.setText("Bench Press " + Double.toString(weight_main_set_1) + " per side for 5");
+            training_main_set_2.setText("Bench Press " + Double.toString(weight_main_set_2) + " per side for 3");
+            training_main_set_3.setText("Bench Press " + Double.toString(weight_main_set_3) + " per side for 1+");
+            training_main_set_4.setText("Bench Press " + Double.toString(weight_main_set_4) + " per side for 3");
+            training_main_set_5.setText("Bench Press " + Double.toString(weight_main_set_5) + " per side for 5");
+            training_main_set_6.setText("Bench Press " + Double.toString(weight_main_set_6) + " per side for 3");
+            training_main_set_7.setText("Bench Press " + Double.toString(weight_main_set_7) + " per side for 5");
+            training_main_set_8.setText("Bench Press " + Double.toString(weight_main_set_8) + " per side for 3");
+            training_main_set_9.setText("Bench Press " + Double.toString(weight_main_set_9) + " per side for 5+");
 
             training_secondary_set_1.setText("Close Grip Bench " + Double.toString(weight_secondary_set_1) + " per side for 6");
             training_secondary_set_2.setText("Close Grip Bench " + Double.toString(weight_secondary_set_2) + " per side for 5");
